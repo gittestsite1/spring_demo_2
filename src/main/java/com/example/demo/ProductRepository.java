@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class ProductRepository {
 
     public String getProduct(){
-        return "NoteBook!!!";
+        return "NoteBook!!!@@";
     }
 }

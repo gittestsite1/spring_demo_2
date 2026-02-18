@@ -7,9 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductService {
 
-    @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
     public String getProduct(){
         return productRepository.getProduct();
     }
