@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @ResponseBody
 public class ProductController {
 
+    private ProductService productService  = new ProductService();
+
     ProductController(){
         System.out.println("진짜 스프링이 알아서 객체 생성을 하나...???");
     }
 
     @RequestMapping(value = "   ", method = RequestMethod.GET)
     public String getProduct(){
-        ProductService productService  = new ProductService();
         return productService.getProduct();
     }
 
