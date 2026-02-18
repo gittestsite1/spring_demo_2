@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-//@Controller
-@RestController
-//@ResponseBody
+@Controller
+@ResponseBody
 public class ProductController {
 
     ProductController(){
@@ -18,7 +17,8 @@ public class ProductController {
 
     @RequestMapping(value = "   ", method = RequestMethod.GET)
     public String getProduct(){
-        return "NoteBook3";
+        ProductService productService  = new ProductService();
+        return productService.getProduct();
     }
 
 }
