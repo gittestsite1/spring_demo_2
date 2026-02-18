@@ -1,8 +1,11 @@
 package com.example.demo;
 
-public class ProductService {
 
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductService {
     public String getProduct(){
-        return "NoteBook_Test2";
+        return "NoteBook_Test4";
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @ResponseBody
 public class ProductController {
 
-    private ProductService productService  = new ProductService();
+    private ProductService productService;
 
     ProductController(){
         System.out.println("진짜 스프링이 알아서 객체 생성을 하나...???");
