@@ -8,14 +8,14 @@ import java.util.Map;
 @Component
 public class ProductRepository {
 
-    private Map<Integer, String> db = new HashMap<>();
+    private Map<Integer, Product> db = new HashMap<>();
     private int id = 1;
 
-    public String getProduct(int id){
+    public Product getProduct(int id){
         return db.get(id);
     }
 
-    public void saveProduct(String productName) {
-        db.put(id++, productName);
+    public void saveProduct(Product product) {
+        db.put(id++, product);
     }
 }

@@ -17,14 +17,14 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public String getProduct(@PathVariable(value = "id") int id ){
+    public Product getProduct(@PathVariable(value = "id") int id ){
         System.out.println("id="+id);
         return productService.getProduct(id);
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public void saveProduct(@RequestParam(value = "name") String productName){
-        productService.saveProduct(productName);
+    public void saveProduct(@RequestBody Product product){
+        productService.saveProduct(product);
     }
 }
 
