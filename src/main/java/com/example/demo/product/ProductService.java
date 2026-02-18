@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.product;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductService {
 
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     @Autowired
     ProductService(ProductRepository productRepository){
@@ -15,5 +15,9 @@ public class ProductService {
     }
     public String getProduct(){
         return productRepository.getProduct();
+    }
+
+    public void saveProduct() {
+        productRepository.saveProduct();
     }
 }
