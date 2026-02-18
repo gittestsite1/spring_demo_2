@@ -13,11 +13,11 @@ public class ProductService {
     ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
-    public String getProduct(){
-        return productRepository.getProduct();
+    public String getProduct(int id){
+        return productRepository.getProduct(id);
     }
 
-    public void saveProduct() {
-        productRepository.saveProduct();
+    public void saveProduct(String productName) {
+        productRepository.saveProduct(productName);
     }
 }

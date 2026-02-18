@@ -2,9 +2,7 @@ package com.example.demo.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @ResponseBody
@@ -14,16 +12,19 @@ public class ProductController {
     private ProductService productService;
 
     ProductController(){
+
         System.out.println("진짜 스프링이 알아서 객체 생성을 하나...???");
     }
 
-    @RequestMapping(value = "   ", method = RequestMethod.GET)
-    public String getProduct(){
-        return productService.getProduct();
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    public String getProduct(@PathVariable(value = "id") int id ){
+        System.out.println("id="+id);
+        return productService.getProduct(id);
     }
 
-    public void saveProduct(){
-        productService.saveProduct();
+    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    public void saveProduct(@RequestParam(value = "name") String productName){
+        productService.saveProduct(productName);
     }
 }
 
